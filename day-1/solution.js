@@ -1,11 +1,11 @@
 const fs = require("node:fs");
 const content = fs.readFileSync('./input', 'utf8');
 
-const spelled_digits = [/[1-9]/g, 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+const digits = [/[1-9]/g, 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 
 let solution = 0;
 content.slice(0, content.length - 1).split('\n').map(line => {
-  let tokens = spelled_digits
+  let tokens = digits
     .flatMap(digit => {
       const matches = Array.from(line.matchAll(digit), match => ({ value: match[0], index: match['index'] }));
       if (matches) {
@@ -15,7 +15,7 @@ content.slice(0, content.length - 1).split('\n').map(line => {
     .sort((a, b) => ((a.index !== b.index) ? ((a.index > b.index) ? 1 : -1) : 0))
     .map(token => {
       if (isNaN(token.value)) {
-        return Number(spelled_digits.indexOf(token.value));
+        return Number(digits.indexOf(token.value));
       }
       return Number(token.value);
 
