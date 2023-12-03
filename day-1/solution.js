@@ -1,8 +1,5 @@
 const fs = require("node:fs");
-
 const content = fs.readFileSync('./input', 'utf8');
-
-const re = /([1-9]|one|two|three|four|five|six|seven|eight|nine)/g;
 
 const spelled_digits = [/[1-9]/g, 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 
