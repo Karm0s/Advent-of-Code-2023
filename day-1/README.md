@@ -12,4 +12,4 @@ A number is composed using the first and last elements of the tokens list.
 Finally, the number is added to the solution variable to calculate a sum for the whole file.
 
 ### Full code:
-https://github.com/Karm0s/Advent-of-Code-2023/blob/542f12149fdeb60c3bd75480325ac1a2db8d3eba/day-1/solution.js#L1-L27
+https://github.com/Karm0s/Advent-of-Code-2023/blob/2b73cd04f77e595d0aa5fe9566fe4d00582d0b58/day-1/solution.js#L1-L39
