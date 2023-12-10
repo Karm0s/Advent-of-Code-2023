@@ -19,4 +19,4 @@ stays the same, all we need to do is change the regular expression that matches 
 the * character. After that, we check for each symbol if it has at least two neighbours and then we multiply 
 them together. Finally, we add the result to the solution variable.
 
-https://github.com/Karm0s/Advent-of-Code-2023/blob/451a0a7cf6b848df9b778071604fd43809ce023c/day-3/solution-part2.ts#L1-L2
+https://github.com/Karm0s/Advent-of-Code-2023/blob/451a0a7cf6b848df9b778071604fd43809ce023c/day-3/solution-part2.ts#L1-L68
