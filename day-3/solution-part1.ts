@@ -1,14 +1,10 @@
-// Read the file synchronously
 import fs from 'node:fs';
 const content: String = fs.readFileSync('./input', 'utf8');
 
-// Create variable to store accumulated solution
 let solution = 0;
 
-// Split the file a list of lines
 const lines = content.slice(0, content.length - 1).split('\n');
 
-// Loop through the lines
 for (let line_index = 0; line_index < lines.length; line_index++) {
 
   const line = lines[line_index];
