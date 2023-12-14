@@ -1,9 +1,5 @@
 import fs from 'node:fs';
 
-const file = fs.readFileSync('input', 'utf8');
-
-const sections = file.slice(0, file.length - 1).split('\n\n');
-
 type ShiftParams = {
   destination: number,
   source: number,
@@ -15,8 +11,11 @@ type Transformation = {
   shifts: ShiftParams[]
 }
 
-const seeds = sections.splice(0, 1)[0].split(':')[1].trim().split(' ').map(i => parseInt(i));
+const file = fs.readFileSync('input', 'utf8');
 
+console.time('Exec Time');
+const sections = file.slice(0, file.length - 1).split('\n\n');
+const seeds = sections.splice(0, 1)[0].split(':')[1].trim().split(' ').map(i => parseInt(i));
 const transformations:Transformation[] = [];
 
 sections.forEach(section => {
@@ -40,8 +39,7 @@ sections.forEach(section => {
 
 const locations = seeds.map(seed => {
   let tState = seed;
-  console.log('\n\nSTART SEED: ' + seed);
-
+  // console.log('\n\nSTART SEED: ' + seed);
   transformations.forEach(t => {
     for (let tShift of t.shifts) {
       if (tState >= tShift.source && tState < tShift.source + tShift.range) {
@@ -49,10 +47,10 @@ const locations = seeds.map(seed => {
         break;
       }
     };
-    console.log(t.name + tState);
+    // console.log(t.name + tState);
   });
   return tState;
 });
 
 console.log('\n\nMIN LOCATION: ' + Math.min(...locations));
-
+console.timeEnd('Exec Time');
